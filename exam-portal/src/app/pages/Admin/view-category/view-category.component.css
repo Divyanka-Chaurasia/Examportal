@@ -1,0 +1,45 @@
+/* CSS for mat-card */
+.mat-card {
+    width: 400px; /* Adjust width as needed */
+    margin: 20px auto; /* Center the card horizontally */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  /* CSS for mat-list */
+  .mat-list {
+    padding: 0; /* Remove default padding */
+  }
+  
+  /* CSS for mat-subheader */
+  .mat-subheader {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* CSS for mat-list-item */
+  .mat-list-item {
+    padding: 10px 0;
+  }
+  
+  /* CSS for category-item */
+  .category-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* CSS for mat-icon */
+  .mat-icon {
+    margin-right: 10px;
+  }
+  
+  /* CSS for mat-line */
+  .mat-line {
+    font-size: 16px;
+  }
+  
+  /* CSS for description */
+
+  

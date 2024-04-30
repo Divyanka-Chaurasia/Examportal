@@ -1,0 +1,77 @@
+<div class="bootstrap-wrapper">
+    <div class="container " style="background-color: #e1f5fe">
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3" style="background-color: white;">
+                <mat-card>
+                    <div class="container text-center">
+                        <img src="./assets/buddha.jpg" width="50px" alt="Your Image" class="rounded-image">
+                    </div>
+                    <h3 class="text-center">!! Register here !!</h3>{{user|json}}
+                    <div>
+                        <form [formGroup]="signupForm" (ngSubmit)="formSubmit()">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input type="text" required [(ngModel)]="user.userName" name="userName"
+                                    formControlName="userName" matInput placeholder="Enter here"
+                                    class="full-width-input">
+                                <div *ngIf="userName">
+                                   <small *ngIf="userName.errors?.['required'] && userName.touched" class="text-danger"><div>This Field Is Requierd</div></small>   
+                                    <small *ngIf="userName.errors?.['minlength'] && userName.touched" class="text-danger">This Field must be contain more than 3 letter</small>
+                                    <small *ngIf="userName.errors?.['maxlength'] && userName.touched" class="text-danger">This Field must be contain less than 30 letter</small>
+                                    
+                                </div>
+                                <mat-hint>User name must be unique</mat-hint>
+                            </mat-form-field><br>
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Userpassword</mat-label>
+                                <input type="password" [(ngModel)]="user.userPassword" matInput
+                                    placeholder="Enter here" class="full-width-input"  required
+                                    formControlName="userPassword"
+                                    >
+                            </mat-form-field>
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>FirstName</mat-label>
+                                <input type="text" required [(ngModel)]="user.userFirstName" matInput
+                                    placeholder="Enter here" class="full-width-input"
+                                    formControlName="userFirstName"
+                                    >
+                            </mat-form-field>
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>LastName</mat-label>
+                                <input type="text" required [(ngModel)]="user.userLastName" matInput
+                                    placeholder="Enter here" class="full-width-input"
+                                    formControlName="userLastName"
+                                    >
+                            </mat-form-field>
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input type="email" required [(ngModel)]="user.userEmail"  matInput
+                                    placeholder="Enter here" class="full-width-input"
+                                    formControlName="userEmail"
+                                    >
+                            </mat-form-field>
+
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Phone</mat-label>
+                                <input type="mobile" required [(ngModel)]="user.userMobile" matInput
+                                    placeholder="Enter here" class="full-width-input"
+                                    formControlName="userMobile"
+                                    >
+                            </mat-form-field>
+                            <div class="container text-center">
+                                <button mat-stroked-button color="primary" type="submit">Sign Up</button>
+                                <button mat-stroked-button color="accent" style="margin-left: 20px;">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </mat-card>
+            </div>
+
+        </div>
+    </div>
+</div>

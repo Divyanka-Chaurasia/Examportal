@@ -1,0 +1,47 @@
+<mat-card>
+    <h1>Add New Quiz</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <form (ngSubmit)="updateForm()">
+            <mat-form-field class="w100">
+              <mat-label>Enter Title</mat-label>
+              <input [value]="quizResponse.title" [(ngModel)]="quizResponse.title" type="text" name="title" placeholder="Enter title" required matInput />
+            </mat-form-field>
+            <mat-form-field class="w100" appearance="fill">
+              <mat-label>Enter Description</mat-label>
+              <textarea [value]="quizResponse.discription" [(ngModel)]="quizResponse.discription" name="Description" type="text" cols="30" rows="5" placeholder="Enter here" matInput></textarea>
+            </mat-form-field>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="w100">
+                  <mat-label>Maximum Marks</mat-label>
+                  <input [value]="quizResponse.maxMarks" [(ngModel)]="quizResponse.maxMarks" type="text" name="Maxmarks" placeholder="Enter maximum marks" matInput />
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="w100">
+                  <mat-label>Number of Questions</mat-label>
+                  <input [value]="quizResponse.numberOfQuestion" [(ngModel)]="quizResponse.numberOfQuestion" type="text" name="numberOfQuestions" placeholder="Enter number of questions" matInput />
+                </mat-form-field>
+              </div>
+            </div>
+            <mat-slide-toggle [(ngModel)]="quizResponse.active" [(ngModel)]="quizResponse.active" class="mt20 mb20">Publish status</mat-slide-toggle>
+            <mat-form-field appearance="fill" class="mt20 w100">
+              <mat-label>Categories</mat-label>
+              <mat-select name="category" [(ngModel)]="quizResponse.cid">
+                <mat-option *ngFor="let c of CategoryResponse" [value]="c.catTitle">
+                  {{c.catTitle}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="container text-center mb20">
+              <button mat-raised-button color="accent" type="submit">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+  

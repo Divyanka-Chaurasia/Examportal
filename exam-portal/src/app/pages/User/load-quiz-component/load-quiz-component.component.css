@@ -1,0 +1,11 @@
+.truncate{
+    display:block;
+    white-space: nowrap;
+    width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.example-header-image {
+  background-image: url('c:\Users\dell\Downloads\exam (2).png');
+  background-size: cover;
+}
